@@ -2,7 +2,7 @@ Artur G
 -----------------
 DISCLAIMER:
 Technically I cheated. I've read: https://github.com/qxf2/qa-interview-web-application and https://qxf2.com/a-better-way-to-interview-qa
-Well, in my defense, I like using GitHub and searching for solutions is part of being a programmer, so I couldnt help myself.
+I couldnt help myself.
 -----------------
 
 Technically I consider this solution a HACK. It needs xUnit and strong refactoring.
@@ -30,11 +30,17 @@ AFAIK nothing else is needed AKA "Works on mine"
 -----------------
 
 Discoveries:
+
 -Firefox is EXTRA slow in automated testing.
+
 -Mixup with Privacy and ToS was discovered by automated test.
+
 -Wasnt able to access "Web Console" in C# in Firefox or Chrome. Waiting has to be implemented without feedback from console.
+
 -Once again, xUnit should be used here.
+
 -Result validation should be made only by analyzing stored "challenge and response values" and not calculating Factorial inside test
+
 -Timeouts (connected to not handling "web console") while inputting randomly invalid data (strings) and too big numbers can lead to false positives. 
 	After timeout occures, anything can happen, ajax can suddenly or never appear and it throws system into chaos (even with resetting forms).
 	Possible solution to that is to monitor "Web Console" but I was unable to do so.
