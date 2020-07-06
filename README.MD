@@ -3,13 +3,14 @@ Artur G
 DISCLAIMER:
 Technically I cheated. I've read: https://github.com/qxf2/qa-interview-web-application and https://qxf2.com/a-better-way-to-interview-qa
 Well, in my defense, I like using GitHub and searching for solutions is part of being a programmer, so I couldnt help myself.
+-----------------
 
 Technically I consider this solution a HACK. It needs xUnit and strong refactoring.
 According to this: http://jimevansmusic.blogspot.com/2018/03/deprecating-parts-of-seleniums-net.html and this: https://stackoverflow.com/questions/48734097/the-name-pagefactory-does-not-exist-in-the-current-context
 Selenium dropped/deprecated support for PageFactory object and other bindings in .Net circa 2018.
 I was forced to use https://www.nuget.org/packages/DotNetSeleniumExtras.PageObjects.Core that is NOT supported by oryginal Selenium team. So my solution technically isnt "Best Practice".
 Additionally I SHOULD have used xUnit to this. I found out too late, that it can be run on Linux, so I will try update my solution before a deadline but I dont think I will be fast enough.
------------------
+
 Installation prerequisite:
 https://docs.microsoft.com/en-us/dotnet/core/install/linux
 Or https://dotnet.microsoft.com/download/dotnet/current
@@ -27,6 +28,7 @@ run ./ExperimentsWithSelenium located in ./ExperimentsWithSelenium/bin/Release/n
 
 AFAIK nothing else is needed AKA "Works on mine"
 -----------------
+
 Discoveries:
 -Firefox is EXTRA slow in automated testing.
 -Mixup with Privacy and ToS was discovered by automated test.
@@ -36,8 +38,10 @@ Discoveries:
 -Timeouts (connected to not handling "web console") while inputting randomly invalid data (strings) and too big numbers can lead to false positives. 
 	After timeout occures, anything can happen, ajax can suddenly or never appear and it throws system into chaos (even with resetting forms).
 	Possible solution to that is to monitor "Web Console" but I was unable to do so.
------------------
+
+
 SCENARIOS:
+-----------------
 
 Feature: Actor wants to calculate factorial of X
 
